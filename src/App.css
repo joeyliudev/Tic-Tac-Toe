@@ -1,0 +1,62 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+html,
+body {
+  height: 100vh;
+  background-color: var(--dark-gray);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 576px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0px;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  grid-template-rows: repeat(5, 160px);
+  gap: 3%;
+  padding-top: 5%;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+/* tablet */
+@media (min-width: 768px) {
+  body {
+    align-items: center;
+  }
+
+  .main {
+    position: relative;
+    top: -50px;
+  }
+
+  .grid {
+    width: 100%;
+    padding-top: 0%;
+  }
+}
+
+@media (min-widt: 992px) {
+  body {
+    align-items: center;
+  }
+
+  .grid {
+    padding-top: 0%;
+    grid-template-columns: repeat(3, 160px);
+    grid-template-rows: repeat(5, 160px);
+  }
+}

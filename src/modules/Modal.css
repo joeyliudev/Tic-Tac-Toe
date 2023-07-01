@@ -1,0 +1,90 @@
+.modalStylye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-color: #1f3540;
+}
+
+.modalContentContainer {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .modalStylye {
+    top: 45%;
+  }
+  .modalContentContainer {
+    width: 80%;
+  }
+}
+
+.modal-bold-yellow {
+  -webkit-text-stroke: 9px var(--yellow);
+}
+
+.modal-bold-turquoise {
+  -webkit-text-stroke: 9px var(--turquoise);
+}
+
+.logoPlaceHolder {
+  margin-right: 2%;
+}
+
+.message {
+  font-size: 2.8em;
+  font-weight: 600;
+}
+
+.winnerSign {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.greet {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--light-gray);
+}
+
+.buttonLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35%;
+}
+
+.buttonStyle {
+  padding: 2%;
+  margin: 1%;
+  height: 60px;
+  color: var(--dark-gray);
+  font-size: 1.2em;
+  font-weight: 600;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quitStyle {
+  background-color: var(--light-gray);
+}
+
+.nextRoundStyle {
+  background-color: var(--yellow);
+}
