@@ -9,19 +9,19 @@ interface ModalProp {
 export default function Modal({ winner, newRound, clearResults }: ModalProp) {
   return (
     <div className="modalStylye">
-      <div className="modalContentContainer">
-        <div className="greet">
-          {winner != null ? <p>YOU WON</p> : <p>TIE GMAE</p>}
-        </div>
+      <div className="greet medium-font">
+        {winner != null ? <p>YOU WON!</p> : <p>TIE GMAE!</p>}
+      </div>
 
+      {winner && (
         <div className="winnerSign">
           <WinnerMsg winner={winner}></WinnerMsg>
         </div>
+      )}
 
-        <div className="buttonLayout">
-          <Quit clearResults={clearResults}></Quit>
-          <NextRound newRound={newRound}></NextRound>
-        </div>
+      <div className="buttonLayout">
+        <Quit clearResults={clearResults}></Quit>
+        <NextRound newRound={newRound}></NextRound>
       </div>
     </div>
   );
@@ -39,16 +39,15 @@ function WinnerMsg({ winner }: WinnerMsgProp) {
           className={classNames(
             "fa-sharp",
             "fa-solid",
-            "fa-4x",
+            "medium-icon-size",
             "logoPlaceHolder",
             winner === 1 ? "turquoise" : "yellow",
-            winner === 1 ? "fa-x" : "fa-o",
-            winner === 1 ? "modal-bold-turquoise" : "modal-bold-yellow"
+            winner === 1 ? "fa-x" : "fa-o"
           )}
         ></span>
         <span
           className={classNames(
-            "message",
+            "message large-font",
             winner === 1 ? "turquoise" : "yellow"
           )}
         >
@@ -68,7 +67,7 @@ interface QuitProp {
 function Quit({ clearResults }: QuitProp) {
   return (
     <div
-      className="buttonStyle shadow quitStyle"
+      className="buttonStyle shadow quitStyle medium-font medium-border-radius"
       onClick={() => clearResults()}
     >
       QUIT
@@ -83,7 +82,7 @@ interface NextRoundProp {
 function NextRound({ newRound }: NextRoundProp) {
   return (
     <div
-      className="buttonStyle shadow nextRoundStyle"
+      className="buttonStyle shadow nextRoundStyle medium-font medium-border-radius"
       onClick={() => newRound()}
     >
       NEXT ROUND

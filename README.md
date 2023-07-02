@@ -1,39 +1,43 @@
 # Tic Tac Toe Game - Front End
 
-Tic Tac Toe Game is code challenges project from Frontend Mentor, you can find the original desing [here](https://www.frontendmentor.io/challenges/tic-tac-toe-game-Re7ZF_E2v).
+Tic Tac Toe Game is code challenges project from Frontend Mentor, you can find the original design [here](https://www.frontendmentor.io/challenges/tic-tac-toe-game-Re7ZF_E2v).
 
-This is my frist React project. The live version of this project is deployed at vercel, click [here](https://tic-tac-toe-joeyliudev.vercel.app/) to check
+This is my frist React project. The live version of this project is deployed at vercel, click [here](https://tic-tac-toe-joeyliudev.vercel.app/) to play
 
 ## Screenshots
 
-### DeskTop Design
+### <center>DeskTop Design
 
 <center>
 <figure>
   <img src="design/TicTacToe-Desktop.jpg" alt="Desktop Design" width=800>
 </figure>
 </center>
-### Tablet Design
+
+### <center>Tablet Design
 
 <center>
 <figure>
   <img src="design/TicTacToe-Tablet.jpg" alt="Tablet Design">
 </figure>
 </center>
-### Mobile Design
+
+### <center>Mobile Design
 
 <center>
 <figure>
   <img src="design/TicTacToe-Mobile.jpg" alt="Mobile Design">
 </figure>
 </center>
-### Win Design
+
+### <center>Win Design
 
 <center>
 <figure>
 <img src="design/TicTacToe-Win.jpg" alt="Win Design" width=800>
 </figure>
 </center>
+
 ## Getting Started
 
 These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
@@ -69,7 +73,13 @@ To start the development server, run npm run dev in the project directory.
 
 This will start the server and open the app in your default web browser at http://localhost:5173/.
 
-This will create an optimized build in the 'build' directory.
+This will create an optimized build in the 'dist' directory.
+
+### building
+
+```console
+    npm run build
+```
 
 ## Built With
 

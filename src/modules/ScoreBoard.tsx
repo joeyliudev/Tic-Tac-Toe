@@ -28,10 +28,10 @@ function Player1Score({ count }: Props) {
   return (
     <>
       <div className="scoreBoardLayout">
-        <div className="scoreBoardContainer player1Score shadow">
+        <div className="scoreBoardContainer player1Score shadow medium-border-radius">
           <div>
-            <p className="titleFont">X (YOU)</p>
-            <p className="countFont">{count}</p>
+            <p className="titleFont small-font">X (YOU)</p>
+            <p className="countFont medium-font">{count}</p>
           </div>
         </div>
       </div>
@@ -43,10 +43,10 @@ function Player2Score({ count }: Props) {
   return (
     <>
       <div className="scoreBoardLayout">
-        <div className="scoreBoardContainer player2Score shadow">
+        <div className="scoreBoardContainer player2Score shadow medium-border-radius">
           <div>
-            <p className="titleFont">O (CPU)</p>
-            <p className="countFont">{count}</p>
+            <p className="titleFont small-font">O (CPU)</p>
+            <p className="countFont medium-font">{count}</p>
           </div>
         </div>
       </div>
@@ -58,10 +58,10 @@ function TiesScore({ count }: Props) {
   return (
     <>
       <div className="scoreBoardLayout">
-        <div className="scoreBoardContainer tiesScore shadow">
+        <div className="scoreBoardContainer tiesScore shadow medium-border-radius">
           <div>
-            <p className="titleFont">TIES</p>
-            <p className="countFont">{count}</p>
+            <p className="titleFont small-font">TIES</p>
+            <p className="countFont medium-font">{count}</p>
           </div>
         </div>
       </div>

@@ -2,14 +2,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
   width: 100%;
-}
-
-.board-more-bold-yellow {
-  -webkit-text-stroke: 10px var(--yellow);
-}
-
-.board-more-bold-turquoise {
-  -webkit-text-stroke: 10px var(--turquoise);
 }

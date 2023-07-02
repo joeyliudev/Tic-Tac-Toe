@@ -71,15 +71,13 @@ function Square({
 
   return (
     <div
-      className="GameBoardContainer shadow"
+      className="GameBoardContainer shadow large-border-radius"
       onClick={clickAble ? onSquareClick : () => {}}
     >
       {p1 && (
-        <i className="fa-sharp fa-solid fa-x fa-7x more-bold-turquoise turquoise board-more-bold-turquoise"></i>
+        <i className="fa-sharp fa-solid fa-x large-icon-size turquoise"></i>
       )}
-      {p2 && (
-        <i className="fa-sharp fa-solid fa-o fa-7x more-bold-yellow yellow board-more-bold-yellow"></i>
-      )}
+      {p2 && <i className="fa-sharp fa-solid fa-o large-icon-size yellow"></i>}
     </div>
   );
 }
