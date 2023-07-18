@@ -27,3 +27,6 @@ vite.config.ts.timestamp-*.mjs
 
 # Environment Variables
 .env*
+
+# coverage report
+coverage

@@ -1,89 +1,85 @@
 import classNames from "classnames";
 import "./Modal.css";
-interface ModalProp {
-  winner: null | number;
-  newRound: () => void;
-  clearResults: () => void;
-}
+import { useAppDispatch, useAppSelector } from "../redux/Hooks";
+import { clear, resetGame } from "./GameBoardSlice";
 
-export default function Modal({ winner, newRound, clearResults }: ModalProp) {
+
+export default function Modal() {
+  const winner = useAppSelector(state => state.game.winner);
+  let msg = winner !== null ? (winner === 'tie' ? 'TIE GMAE!' : 'YOU WON!') : null;
+
   return (
+
     <div className="modalStylye">
       <div className="greet medium-font">
-        {winner != null ? <p>YOU WON!</p> : <p>TIE GMAE!</p>}
+        {winner !== null && <p>{msg}</p>}
       </div>
 
-      {winner && (
+      {winner !== 'tie' && (
         <div className="winnerSign">
           <WinnerMsg winner={winner}></WinnerMsg>
         </div>
       )}
 
       <div className="buttonLayout">
-        <Quit clearResults={clearResults}></Quit>
-        <NextRound newRound={newRound}></NextRound>
+        <Quit></Quit>
+        <NextRound></NextRound>
       </div>
     </div>
   );
 }
 
 interface WinnerMsgProp {
-  winner: null | number;
+  winner: null | string;
 }
 
 function WinnerMsg({ winner }: WinnerMsgProp) {
-  if (null != winner) {
-    return (
-      <>
-        <span
-          className={classNames(
-            "fa-sharp",
-            "fa-solid",
-            "medium-icon-size",
-            "logoPlaceHolder",
-            winner === 1 ? "turquoise" : "yellow",
-            winner === 1 ? "fa-x" : "fa-o"
-          )}
-        ></span>
-        <span
-          className={classNames(
-            "message large-font",
-            winner === 1 ? "turquoise" : "yellow"
-          )}
-        >
-          TAKES THE ROUND
-        </span>
-      </>
-    );
-  } else {
-    return <div></div>;
-  }
+  return (
+    <>
+      <span
+        className={classNames(
+          "fa-sharp",
+          "fa-solid",
+          "medium-icon-size",
+          "logoPlaceHolder",
+          winner === 'player1' ? "turquoise" : "yellow",
+          winner === 'player1' ? "fa-x" : "fa-o"
+        )}
+      ></span>
+      <span
+        className={classNames(
+          "message large-font",
+          winner === 'player2' ? "turquoise" : "yellow"
+        )}
+      >
+        TAKES THE ROUND
+      </span>
+    </>
+  );
 }
 
-interface QuitProp {
-  clearResults: () => void;
-}
 
-function Quit({ clearResults }: QuitProp) {
+
+function Quit() {
+  const dispatch = useAppDispatch();
+
   return (
     <div
       className="buttonStyle shadow quitStyle medium-font medium-border-radius"
-      onClick={() => clearResults()}
+      onClick={() => dispatch(clear("clear"))}
     >
       QUIT
     </div>
   );
 }
 
-interface NextRoundProp {
-  newRound: () => void;
-}
 
-function NextRound({ newRound }: NextRoundProp) {
+function NextRound() {
+  const dispatch = useAppDispatch();
   return (
     <div
       className="buttonStyle shadow nextRoundStyle medium-font medium-border-radius"
-      onClick={() => newRound()}
+      onClick={() => dispatch(resetGame("rest"))}
     >
       NEXT ROUND
     </div>

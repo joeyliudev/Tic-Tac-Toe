@@ -60,7 +60,7 @@ To install the project, follow these steps:
 3. Install the dependencies:
 
 ```console
-    npm install
+    yarn install
 ```
 
 ### Running
@@ -68,7 +68,7 @@ To install the project, follow these steps:
 To start the development server, run npm run dev in the project directory.
 
 ```console
-    npm run dev
+    yarn run dev
 ```
 
 This will start the server and open the app in your default web browser at http://localhost:5173/.
@@ -78,7 +78,7 @@ This will create an optimized build in the 'dist' directory.
 ### building
 
 ```console
-    npm run build
+    yarn run build
 ```
 
 ## Built With
@@ -87,6 +87,7 @@ This will create an optimized build in the 'dist' directory.
 - CSS
 - TypeScript
 - React.js - The JavaScript library used to build the user interface
+- Redux Toolkit
 
 ## Disclaimer
 

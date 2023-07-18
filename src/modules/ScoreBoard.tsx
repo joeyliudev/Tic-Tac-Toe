@@ -1,21 +1,18 @@
 import "./ScoreBoard.css";
 
-interface ScoreProps {
-  player1Count: number;
-  player2Count: number;
-  tiesCount: number;
-}
+import { useAppSelector } from '../redux/Hooks'
+import { GameState } from "./GameBoardSlice";
 
-export default function Score({
-  player1Count,
-  player2Count,
-  tiesCount,
-}: ScoreProps) {
+
+export default function Score() {
+
+  const game = useAppSelector<GameState>(state => state.game)
+
   return (
     <>
-      <Player1Score count={player1Count}></Player1Score>
-      <TiesScore count={tiesCount}></TiesScore>
-      <Player2Score count={player2Count}></Player2Score>
+      <Player1Score count={game.player1Wins}></Player1Score>
+      <TiesScore count={game.ties}></TiesScore>
+      <Player2Score count={game.player2Wins}></Player2Score>
     </>
   );
 }

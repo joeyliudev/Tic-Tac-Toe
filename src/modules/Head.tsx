@@ -1,26 +1,14 @@
-import { useState } from "react";
-import "./Head.css";
 import classNames from "classnames";
+import { useAppDispatch, useAppSelector } from "../redux/Hooks";
+import { clear, currentPlayer } from "./GameBoardSlice";
+import "./Head.css";
 
-interface HeadProps {
-  currentPlayer: number;
-  resetClickCallback: () => void;
-}
-
-interface IndicatorProp {
-  currentPlayer: number;
-}
-
-interface ButtonProp {
-  callback: () => void;
-}
-
-export default function Head({ currentPlayer, resetClickCallback }: HeadProps) {
+export default function Head() {
   return (
     <>
       <Logo></Logo>
-      <Indicator currentPlayer={currentPlayer}></Indicator>
-      <RestButton callback={() => resetClickCallback()}></RestButton>
+      <Indicator></Indicator>
+      <RestButton></RestButton >
     </>
   );
 }
@@ -38,7 +26,10 @@ function Logo() {
   );
 }
 
-function Indicator({ currentPlayer }: IndicatorProp) {
+function Indicator() {
+  const moves = useAppSelector(state => state.game.history);
+  let player = currentPlayer(moves)
+
   return (
     <div className="headerBox">
       <div className="shadow indicatorLayout small-border-radius">
@@ -50,7 +41,7 @@ function Indicator({ currentPlayer }: IndicatorProp) {
               "small-icon-size",
               "logo-margin",
               "light-gray",
-              currentPlayer === 1 ? "fa-x" : "fa-o"
+              player === 1 ? "fa-x" : "fa-o"
             )}
           ></i>
           <span className="turn medium-font">TURN</span>
@@ -60,13 +51,16 @@ function Indicator({ currentPlayer }: IndicatorProp) {
   );
 }
 
-function RestButton({ callback }: ButtonProp) {
+function RestButton() {
+
+  const dispatch = useAppDispatch();
+
   return (
     <div className="headerBox">
       <div className="restButtonLayout">
         <div
           className="resetButtonStyle shadow medium-font small-border-radius"
-          onClick={() => callback()}
+          onClick={() => dispatch(clear('reset'))}
         >
           <i className="fa-sharp fa-solid fa-arrow-rotate-right dark-gray"></i>
         </div>
